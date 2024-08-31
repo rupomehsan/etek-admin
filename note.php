@@ -30,3 +30,12 @@
      {
      return $q->where('status', 'inactive');
      }
+
+
+     if ($request->hasFile('image')) {
+     $image = $request->file('image');
+     $requestData['image'] = uploader($image, 'uploads/blogcategory');
+     $name = pathinfo($requestData['image'], PATHINFO_FILENAME);
+     $ext = pathinfo($requestData['image'], PATHINFO_EXTENSION);
+     Storage::disk('etek')->putFileAs("uploads/blogcategory", $image, $name . '.' . $ext);
+     }

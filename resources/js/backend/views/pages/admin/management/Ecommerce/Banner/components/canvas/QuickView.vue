@@ -15,7 +15,7 @@
                             <th></th>
                             <th></th>
                             <th>
-                                <img v-if="item.image" :src="item.image" alt="" style="height: 130px;">
+                                <img v-if="item.image" :src="`${load_image(item.image) ?? '/avatar.png'} `" alt="" style="height: 130px;">
                             </th>
                         </tr>
                         <tr>
@@ -25,13 +25,7 @@
                                 {{ item.title }}
                             </th>
                         </tr>
-                        <tr>
-                            <th>Total Product</th>
-                            <th>:</th>
-                            <th>
-                                {{ item.total_product }}
-                            </th>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -48,8 +42,9 @@ export default {
         ...mapActions(store, [
             'set_show_details_canvas'
         ]),
+        load_image: window.load_image
     },
-    computed:{
+    computed: {
         ...mapWritableState(store, [
             'show_details_canvas',
             'item',

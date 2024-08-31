@@ -167,27 +167,35 @@
                         title: `Banner`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `Allside_banner`,
+                        title: `Side Banner`,
+                    },
+                    {
+                        route_name: `Allblog_categories`,
+                        title: `Blog Categories`,
+                    },
+                    {
+                        route_name: `Allblog`,
                         title: `Blog`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `Allcontact_us`,
                         title: `Contact Us`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `Allsubscribers`,
                         title: `Subscribers`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `TermsAndCondition`,
                         title: `Terms and Condition`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `ReturnPolicy`,
                         title: `Return Policy`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `ShipingAndDelivery`,
                         title: `Shipping and Delivery`,
                     },
                     {

@@ -22,6 +22,7 @@ const setup: setup_type = {
         'title',
         'image',
         'slug',
+        'is_show',
         'created_at',
         'status',
     ],

@@ -5,23 +5,13 @@
         </label>
 
         <div v-if="['text', 'number', 'password', 'email', 'date', 'month'].includes(type)" class="mt-1 mb-3">
-            <input class="form-control form-control-square mb-2"
-                :type="type"
-                :name="name"
-                :id="name"
-                :value="value"
-                @change="errorReset" />
+            <input class="form-control form-control-square mb-2" :readonly="readonly" :type="type" :name="name"
+                :id="name" :value="value" @change="errorReset" />
         </div>
 
         <div v-if="type === 'checkbox'" class="mt-1 mb-3">
-            <input
-                :checked="value > 0"
-                :name="name"
-                :id="name"
-                :value="value"
-                @change="errorReset"
-                class="form-check-input ml-0"
-                type="checkbox">
+            <input :checked="value > 0" :name="name" :id="name" :value="value" @change="errorReset"
+                class="form-check-input ml-0" type="checkbox">
         </div>
 
         <div v-if="type === 'textarea'" class="mt-1 mb-3">
@@ -52,6 +42,7 @@
 import TextEditor from './TextEditor.vue';
 import { mapActions, mapState } from 'pinia'
 import { blog_setup_store } from '../pages/admin/management/BlogManagement/Blog/setup/store';
+import { readonly } from 'vue';
 /**
  * props:
  */
@@ -76,6 +67,11 @@ export default {
         multiple: {
             required: false,
             type: Boolean,
+        },
+        readonly: {
+            required: false,
+            type: Boolean,
+            default: false
         },
         value: {
             required: false,

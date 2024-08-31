@@ -26,7 +26,12 @@ import report_routes from "./management/Report/setup/routes"
 import ecommer_order_routes from "./management/Ecommerce/Order/setup/routes"
 import customer_wishlist_routes from "./management/Ecommerce/CustomerWishlist/setup/routes"
 import home_banner_routes from "./management/Ecommerce/Banner/setup/routes"
-
+import home_side_banner_routes from "./management/Ecommerce/SideBanner/setup/routes"
+import blog_category_routes from "./management/Ecommerce/BlogCategory/setup/routes"
+import blog_routes from "./management/Ecommerce/Blog/setup/routes"
+import contact_us_routes from "./management/Ecommerce/ContactUs/setup/routes"
+import subscribers_routes from "./management/Ecommerce/Subscribers/setup/routes"
+import website_pages_routes from "./management/Ecommerce/Pages/route"
 
 
 const routes = {
@@ -81,6 +86,12 @@ const routes = {
         ecommer_order_routes,
         customer_wishlist_routes,
         home_banner_routes,
+        home_side_banner_routes,
+        blog_category_routes,
+        blog_routes,
+        contact_us_routes,
+        subscribers_routes,
+        website_pages_routes,
 
     ]
 };

@@ -17,7 +17,7 @@
                                 <tbody>
                                     <tr>
                                         <th colspan="3">
-                                            <img height="200" width="200" :src="item.image" alt="">
+                                            <img height="200" class="w-100" :src="item.image" alt="">
                                         </th>
                                     </tr>
                                     <tr>

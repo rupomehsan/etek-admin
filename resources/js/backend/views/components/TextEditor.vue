@@ -42,6 +42,11 @@ export default {
         this.editor = CKEDITOR.replace('editor' + this.data_store);
     },
     watch: {
+        'default_data': {
+            handler: function (v) {
+                this.data = v;
+            }
+        },
         'data': {
             handler: function (v) {
                 this.set_value(this.data_store, v);

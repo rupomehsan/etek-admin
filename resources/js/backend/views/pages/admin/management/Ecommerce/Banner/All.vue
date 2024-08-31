@@ -19,6 +19,7 @@
                                         <th class="w-10"> ID </th>
                                         <th> Title </th>
                                         <th> Image </th>
+                                        <th> Is show </th>
                                         <th> Status </th>
                                     </tr>
                                 </thead>
@@ -44,6 +45,9 @@
                                         <td>
                                             <img height="50" width="50"
                                                 :src="`${load_image(item.image) ?? '/avatar.png'} `" alt="">
+                                        </td>
+                                        <td>
+                                            {{ item.is_show == 1 ? 'Yes' : 'No' }}
                                         </td>
                                         <td>
                                             {{ item.status ?? 'N/A' }}
