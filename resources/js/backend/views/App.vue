@@ -27,6 +27,7 @@
                 </ul>
 
                 <p class="mb-0">Gradient Background</p>
+
                 <hr />
 
                 <ul class="switcher">
@@ -40,6 +41,7 @@
                     <li id="theme14" @click="changeTheme('14')"></li>
                     <li id="theme15" @click="changeTheme('15')"></li>
                 </ul>
+                
             </div>
         </div>
         <!--end color switcher-->

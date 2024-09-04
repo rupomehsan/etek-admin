@@ -7,10 +7,9 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="row" style="row-gap: 30px;">
-
                                 <div class="col-md-12" v-if="is_loaded">
                                     <div class="form-group mt-4">
-                                        <label for="">Terms And Conditions</label>
+                                        <label for="">Shiping and Delivery</label>
                                         <div class="mt-1 mb-3">
                                             <!-- <input class="form-control form-control-square mb-2" type="text"
                                         name="page_full_description" id="title"> -->
@@ -23,9 +22,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
 
                             <div class="form-group mt-5 text-center">
                                 <button type="submit" class="btn btn-light btn-square px-5">

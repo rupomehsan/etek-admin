@@ -198,24 +198,25 @@
                         route_name: `ShipingAndDelivery`,
                         title: `Shipping and Delivery`,
                     },
-                    {
-                        route_name: `AllBlog`,
-                        title: `Integrations`,
-                    },
+
                     {
                         route_name: `AllBlog`,
                         title: `General SEO`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `Allfaqs`,
                         title: `FAQ`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `Allproduct_faq_reply`,
+                        title: `Product FAQ reply`,
+                    },
+                    {
+                        route_name: `BreakingNews`,
                         title: `Breaking News`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `Allpromo_codes`,
                         title: `Promo Codes`,
                     },
                     {

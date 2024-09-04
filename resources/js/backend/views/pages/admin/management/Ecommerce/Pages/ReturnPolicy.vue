@@ -10,7 +10,7 @@
 
                                 <div class="col-md-12" v-if="is_loaded">
                                     <div class="form-group mt-4">
-                                        <label for="">Terms And Conditions</label>
+                                        <label for="">Return Policy</label>
                                         <div class="mt-1 mb-3">
                                             <!-- <input class="form-control form-control-square mb-2" type="text"
                                         name="page_full_description" id="title"> -->

@@ -32,6 +32,9 @@ import blog_routes from "./management/Ecommerce/Blog/setup/routes"
 import contact_us_routes from "./management/Ecommerce/ContactUs/setup/routes"
 import subscribers_routes from "./management/Ecommerce/Subscribers/setup/routes"
 import website_pages_routes from "./management/Ecommerce/Pages/route"
+import faq_routes from "./management/Ecommerce/Faq/setup/routes"
+import promo_code_routes from "./management/Ecommerce/PromoCode/setup/routes"
+import product_faq_routes from "./management/Ecommerce/ProductFAQ/setup/routes"
 
 
 const routes = {
@@ -92,6 +95,9 @@ const routes = {
         contact_us_routes,
         subscribers_routes,
         website_pages_routes,
+        faq_routes,
+        promo_code_routes,
+        product_faq_routes,
 
     ]
 };
