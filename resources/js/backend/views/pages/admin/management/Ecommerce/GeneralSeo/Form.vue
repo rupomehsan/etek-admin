@@ -18,7 +18,6 @@
                     <div class="row">
                         <template v-for="(form_field, index) in form_fields" v-bind:key="index">
                             <div :class="form_field.row_col_class ? form_field.row_col_class : `col-md-6`">
-
                                 <common-input :label="form_field.label" :type="form_field.type" :name="form_field.name"
                                     :multiple="form_field.multiple" :value="form_field.value"
                                     :data_list="form_field.data_list" />

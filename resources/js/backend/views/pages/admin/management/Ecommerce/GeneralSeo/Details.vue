@@ -17,39 +17,25 @@
                                 <tbody>
 
                                     <tr>
-                                        <th>Code</th>
+                                        <th>Title</th>
                                         <th>:</th>
                                         <th>
-                                            {{ item.code }}
+                                            {{ item.title }}
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th>Type</th>
+                                        <th>Value</th>
                                         <th>:</th>
                                         <th>
-                                            {{  item.type }}
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>Amount</th>
-                                        <th>:</th>
-                                        <th>
-                                           {{ item.value }}
+                                            {{ item.value }}
                                         </th>
                                     </tr>
 
                                     <tr>
-                                        <th>Expire Date</th>
-                                        <th>:</th>
-                                        <th>
-                                           {{  item.expire_date }}
-                                        </th>
-                                    </tr>
-                                    <tr>
                                         <th>Status</th>
                                         <th>:</th>
                                         <th>
-                                            {{  item.status }}
+                                            {{ item.status }}
                                         </th>
                                     </tr>
 

@@ -13,17 +13,17 @@
                     <tbody>
 
                         <tr>
-                            <th>Question</th>
+                            <th>Title</th>
                             <th>:</th>
                             <th>
-                                {{ item.product?.title }}
+                                {{ item.title }}
                             </th>
                         </tr>
                         <tr>
-                            <th>Answer</th>
+                            <th>Value</th>
                             <th>:</th>
                             <th>
-                                {{ item.answer }}
+                                {{ item.value }}
                             </th>
                         </tr>
 

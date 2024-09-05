@@ -17,38 +17,25 @@
                                 <tbody>
 
                                     <tr>
-                                        <th>Product</th>
+                                        <th>Title</th>
                                         <th>:</th>
                                         <th>
-                                            {{ item.product?.title ?? 'N/A' }}
+                                            {{ item.title }}
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th>User</th>
+                                        <th>Value</th>
                                         <th>:</th>
                                         <th>
-                                            {{  item.user?.name }}
+                                            {{ item.value }}
                                         </th>
                                     </tr>
+
                                     <tr>
-                                        <th>Question</th>
+                                        <th>Status</th>
                                         <th>:</th>
                                         <th>
-                                          {{  item.questions }}
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>Answer</th>
-                                        <th>:</th>
-                                        <th>
-                                            {{  item.ans }}
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>Is active</th>
-                                        <th>:</th>
-                                        <th>
-                                            {{  item.is_approved ? 'Approved' : 'Pending' }}
+                                            {{ item.status }}
                                         </th>
                                     </tr>
 

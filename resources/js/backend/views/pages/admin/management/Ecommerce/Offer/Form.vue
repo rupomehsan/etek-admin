@@ -18,27 +18,20 @@
                     <div class="row">
                         <template v-for="(form_field, index) in form_fields" v-bind:key="index">
                             <div :class="form_field.row_col_class ? form_field.row_col_class : `col-md-6`">
-                                <template v-if="form_field.type === 'select'">
-                                    <div class="form-group ">
-                                        <label for="">Select Category</label>
-                                        <div class="mt-1 mb-3">
-                                            <category-drop-down-el :name="'blog_category_id'" :value="[this.item.blog_category]"
-                                                :multiple="form_field.multiple"></category-drop-down-el>
-                                        </div>
-                                    </div>
-                                </template>
-                                <template v-else>
-                                    <common-input :label="form_field.label" :type="form_field.type"
-                                        :name="form_field.name" :multiple="form_field.multiple"
-                                        :value="form_field.value" :data_list="form_field.data_list" />
-                                </template>
-
+                                <common-input :label="form_field.label" :type="form_field.type" :name="form_field.name"
+                                    :multiple="form_field.multiple" :value="form_field.value"
+                                    :data_list="form_field.data_list" />
                             </div>
                         </template>
-
-
-
-
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12" v-if="is_loaded">
+                            <!-- <input type="search" class="form-control" placeholder="Search Products"> -->
+                            <ProductDropDown
+                            :multiple="true"
+                                :value="[]"
+                                :name="`product_ids`" />
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -58,16 +51,17 @@ import { store } from './setup/store';
 import setup from "./setup";
 import form_fields from "./setup/form_fields";
 import CategoryDropDownEl from '../BlogCategory/components/dropdown/DropDownEl.vue';
+import ProductDropDown from '../../ProductManagement/Product/components/dropdown/DropDownEl.vue'
 export default {
     components: {
-        CategoryDropDownEl,
+        CategoryDropDownEl, ProductDropDown
     },
     data: () => ({
         route_prefix: '',
         form_fields,
         param_id: null,
         page_full_description: '',
-        is_loaded:true,
+        is_loaded: true,
     }),
     created: async function () {
         let id = this.param_id = this.$route.params.id;
@@ -80,6 +74,8 @@ export default {
         if (id) {
             this.set_fields(id);
         }
+
+        this.is_loaded = true
     },
     methods: {
         ...mapActions(store, {

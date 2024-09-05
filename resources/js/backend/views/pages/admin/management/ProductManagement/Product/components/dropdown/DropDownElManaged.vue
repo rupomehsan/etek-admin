@@ -1,14 +1,19 @@
 <template lang="">
     <div class="custom_drop_down">
         <input type="hidden" :id="name" :name="name" :value="`[${selected_ids}]`">
-        <div class="selected_list" @click="show_list = true">
+        <div class="selected_list" @click="show_list = true" style="height: 49px; overflow-y: scroll;">
             <div v-for="item in selected" :key="item.id" :id="item.id" class="selected_item">
                 <div class="label">
                     {{ item.title }}
+                    -
+                    {{ item.customer_sales_price }}
                 </div>
                 <div @click.prevent="remove_item(item)" class="remove">
                     <i class="fa fa-close"></i>
                 </div>
+            </div>
+            <div v-if="!selected.length" class="text-info">
+                click here to select products
             </div>
         </div>
         <div class="drop_down_items" v-if="show_list">
@@ -33,8 +38,11 @@
                                 type="checkbox" :id="`drop_item_${item.id}`"
                                 class="form-check-input ml-0">
                         </div>
-                        <div class="label">{{ item.title }}</div>
-
+                        <div class="label">
+                            {{ item.id }}
+                            <span> - {{ item.title }}</span>
+                            <span> - {{ item.customer_sales_price }} TK</span>
+                        </div>
                     </label>
                 </li>
             </ul>
@@ -55,28 +63,41 @@ import debounce from '../../helpers/debounce';
 
 export default {
     props: {
-        multiple: {
-            type: Boolean,
-            default: false,
-        },
         name: {
             type: String,
-            default: 'users_' + (parseInt(Math.random() * 1000)),
+            default: 'selected_' + (parseInt(Math.random() * 1000)),
         },
-        value: {
+        callback: {
+            type: Function,
+            default: () => '',
+        },
+        default_data: {
             type: Array,
             default: [],
         }
     },
     created: function () {
-        if (!this.all?.data?.lenght) {
+        if (!this.all?.data?.length) {
             this.get_all();
         }
-        this.$watch('value',function(v){
-            v.forEach(i=>{
-                this.set_selected(i);
-            })
-        })
+
+        this.selected = this.default_data
+        // this.$watch('default_data', function (v) {
+        //     console.log(v);
+
+        //     // v.forEach(i=>{
+        //     //     this.set_selected(i);
+        //     // })
+        // })
+        console.log(this.default_data)
+    },
+    watch: {
+        selected: {
+            handler: function (newv) {
+                this.set_selected_managed_items(this.name, newv);
+            },
+            deep: true,
+        },
     },
     data: () => ({
         selected: [],
@@ -87,6 +108,7 @@ export default {
             'get_all',
             'set_paginate',
             'set_page',
+            'set_selected_managed_items',
         ]),
         search_item: debounce(async function (event) {
             let value = event.target.value;
@@ -94,14 +116,10 @@ export default {
             this.only_latest_data = true;
             await this.get_all();
             this.only_latest_data = false;
-        }, 500),
+        }, 300),
         set_selected: function (item, event) {
-            if(!this.multiple){
-                this.selected = [item];
-                return;
-            }
-
             if (event.target.checked) {
+                item.qty = 1;
                 this.selected.push(item);
             } else {
                 this.selected = this.selected.filter(i => i.id != item.id);

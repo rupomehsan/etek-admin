@@ -1,7 +1,7 @@
 import app_config from '../../../../app_config';
 import setup_type from './setup_type';
 
-const prefix: string = 'Promo Code ';
+const prefix: string = 'General SEO';
 
 const setup: setup_type = {
 
@@ -10,20 +10,17 @@ const setup: setup_type = {
 
     api_host: app_config.api_host,
     api_version: app_config.api_version,
-    api_end_point: 'promo-codes',
+    api_end_point: 'general-seos',
 
-    module_name: 'promo_codes',
-    store_prefix: 'promo_codes',
-    route_prefix: `promo_codes`,
-    route_path: `promo-codes`,
+    module_name: 'general_seos',
+    store_prefix: 'general_seos',
+    route_prefix: `general_seos`,
+    route_path: `general-seos`,
 
     select_fields: [
         'id',
-        'code',
-        'count',
-        'type',
+        'title',
         'value',
-        'expire_date',
         'slug',
         'created_at',
         'status',

@@ -17,10 +17,10 @@
                                             <select-all />
                                         </th>
                                         <th class="w-10"> ID </th>
-                                        <th> Product </th>
-                                        <th> User </th>
-                                        <th> Question </th>
-                                        <th> Answer </th>
+                                        <th> Title </th>
+                                        <th> Discount type </th>
+                                        <th> Discount </th>
+                                        <th> Image </th>
                                         <th> Status </th>
                                     </tr>
                                 </thead>
@@ -37,27 +37,24 @@
                                             {{ item.id }}
                                         </td>
                                         <td>
-
-                                            {{ item.product?.title ?? 'N/A' }}
-
-
-                                        </td>
-                                        <td>
-                                            {{ item?.user?.name ?? 'N/A' }}
+                                            <quick-view-column :item="item">
+                                                {{ item.title ?? 'N/A' }}
+                                            </quick-view-column>
 
                                         </td>
                                         <td>
-                                            {{ item?.questions ?? 'N/A' }}
+                                            {{ item?.discount_type ?? 'N/A' }}
+                                        </td>
+                                        <td>
+                                            {{ item?.discount ?? 'N/A' }}
 
                                         </td>
                                         <td>
-                                            {{ item.ans ?? 'N/A' }}
-
+                                            <img :src="`${load_image(item.image)}`" height="50" width="60" alt="">
                                         </td>
 
-
                                         <td>
-                                            {{ item.is_approved == 1 ? 'Approved' : 'Pending' ?? 'N/A' }}
+                                            {{ item.status ?? 'N/A' }}
                                         </td>
 
                                     </tr>

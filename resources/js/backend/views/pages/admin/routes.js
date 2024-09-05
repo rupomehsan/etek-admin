@@ -35,6 +35,8 @@ import website_pages_routes from "./management/Ecommerce/Pages/route"
 import faq_routes from "./management/Ecommerce/Faq/setup/routes"
 import promo_code_routes from "./management/Ecommerce/PromoCode/setup/routes"
 import product_faq_routes from "./management/Ecommerce/ProductFAQ/setup/routes"
+import general_seo_routes from "./management/Ecommerce/GeneralSeo/setup/routes"
+import offers_routes from "./management/Ecommerce/Offer/setup/routes"
 
 
 const routes = {
@@ -98,6 +100,8 @@ const routes = {
         faq_routes,
         promo_code_routes,
         product_faq_routes,
+        general_seo_routes,
+        offers_routes,
 
     ]
 };

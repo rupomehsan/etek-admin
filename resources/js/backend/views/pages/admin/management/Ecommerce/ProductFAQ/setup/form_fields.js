@@ -1,25 +1,20 @@
 export default [
 
     {
-        name: "title",
-        label: "Title",
+        name: "questions",
+        label: "Question",
         type: "text",
         value: "",
     },
 
     {
-        name: "Select Category",
-        label: "Title",
-        type: "select",
+        name: "ans",
+        label: "Ans",
+        type: "text",
         multiple: false,
     },
 
 
-    {
-        name: "thumbnail_image",
-        label: " Image",
-        type: "file",
-        value: "",
-    },
+
 
 ];

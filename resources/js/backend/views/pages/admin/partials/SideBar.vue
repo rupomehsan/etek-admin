@@ -200,7 +200,7 @@
                     },
 
                     {
-                        route_name: `AllBlog`,
+                        route_name: `Allgeneral_seos`,
                         title: `General SEO`,
                     },
                     {
@@ -220,7 +220,7 @@
                         title: `Promo Codes`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `Allproduct_offers`,
                         title: `Offers`,
                     },
                     {

@@ -17,11 +17,8 @@
                                             <select-all />
                                         </th>
                                         <th class="w-10"> ID </th>
-                                        <th> Code </th>
-                                        <th> Type </th>
+                                        <th> Title </th>
                                         <th> Value </th>
-
-                                        <th> Expire Date </th>
                                         <th> Status </th>
                                     </tr>
                                 </thead>
@@ -39,22 +36,16 @@
                                         </td>
                                         <td>
                                             <quick-view-column :item="item">
-                                                {{ item.code ?? 'N/A' }}
+                                                {{ item.title ?? 'N/A' }}
                                             </quick-view-column>
 
                                         </td>
                                         <td>
-                                            {{ item.type ?? 'N/A' }}
+                                            {{ item?.value ?? 'N/A' }}
 
                                         </td>
 
-                                        <td>
-                                            {{ item.value ?? 'N/A' }}
-                                        </td>
 
-                                        <td>
-                                            {{ item.expire_date ?? 'N/A' }}
-                                        </td>
                                         <td>
                                             {{ item.status ?? 'N/A' }}
                                         </td>

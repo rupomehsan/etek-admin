@@ -1,6 +1,6 @@
 <template lang="">
     <div class="custom_drop_down">
-        <input type="hidden" :id="name" :name="name" :value="`[${selected_ids}]`">
+        <input type="hidden" :id="name" :name="name" :value="multiple ? `[${selected_ids}]` : `${selected_ids}`">
         <div class="selected_list" @click="show_list = true">
             <div v-for="item in selected" :key="item.id" :id="item.id" class="selected_item">
                 <div class="label">
@@ -20,7 +20,7 @@
 
                 <button type="button"
                     @click.prevent="show_list = false"
-                    class="btn btn-outline-danger">
+                    class="btn btn-danger">
                     <i class="fa fa-close"></i>
                 </button>
             </div>
@@ -34,7 +34,6 @@
                                 class="form-check-input ml-0">
                         </div>
                         <div class="label">{{ item.title }}</div>
-
                     </label>
                 </li>
             </ul>
