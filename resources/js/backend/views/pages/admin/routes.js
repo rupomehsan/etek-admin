@@ -39,10 +39,12 @@ import general_seo_routes from "./management/Ecommerce/GeneralSeo/setup/routes"
 import offers_routes from "./management/Ecommerce/Offer/setup/routes"
 
 
+
 const routes = {
     path: '',
     component: Layout,
     children: [
+
         {
             path: 'dashboard',
             component: Dashboard,
@@ -63,10 +65,12 @@ const routes = {
             name: 'BarcodeGenerator',
             component: BarcodeGenerator,
         },
+
         //blog management routes
         // blog_category_routes,
         // blog_routes,
         //user management routes
+
         user_routes,
         user_supplier_routes,
 
@@ -102,6 +106,7 @@ const routes = {
         product_faq_routes,
         general_seo_routes,
         offers_routes,
+
 
     ]
 };

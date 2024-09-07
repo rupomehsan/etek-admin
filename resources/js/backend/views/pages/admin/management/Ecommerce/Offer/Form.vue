@@ -27,10 +27,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-12" v-if="is_loaded">
                             <!-- <input type="search" class="form-control" placeholder="Search Products"> -->
-                            <ProductDropDown
-                            :multiple="true"
-                                :value="[]"
-                                :name="`product_ids`" />
+                            <ProductDropDown :multiple="true" :value="selectedProducts" :name="`product_ids`" />
                         </div>
                     </div>
                 </div>
@@ -62,6 +59,12 @@ export default {
         param_id: null,
         page_full_description: '',
         is_loaded: true,
+        selectedProducts: [
+            {
+                id: 83106,
+                title: 'Tecnoware 12KVA Electronic Single Phase Stabilizer'
+            }
+        ],
     }),
     created: async function () {
         let id = this.param_id = this.$route.params.id;
@@ -97,6 +100,7 @@ export default {
             await this.details(id);
             if (this.item) {
                 this.page_full_description = this.item.description
+
                 this.form_fields.forEach((field, index) => {
                     Object.entries(this.item).forEach((value) => {
                         if (field.name == value[0]) {
@@ -104,8 +108,19 @@ export default {
                         }
                     });
                 });
+
+                if (this.item.selected_products.length) {
+                    this.item.selected_products.forEach(element => {
+                        let dataList = {}
+                        dataList.id = element.id
+                        dataList.title = element.title
+                        this.selectedProducts.push(dataList)
+                    });
+                }
             }
+
             this.is_loaded = true
+            
         },
 
         set_value: function (state, value) {

@@ -224,19 +224,19 @@
                         title: `Offers`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `FeatureProducts`,
                         title: `Featured Products`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `FeatureCategory`,
                         title: `Featured Categories`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `HideProducts`,
                         title: `Hide Products`,
                     },
                     {
-                        route_name: `AllBlog`,
+                        route_name: `HideCategory`,
                         title: `Hide Categories`,
                     },
                 ]" />
