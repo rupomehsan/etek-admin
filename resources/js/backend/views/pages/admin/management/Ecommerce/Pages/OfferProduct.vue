@@ -3,7 +3,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header py-1 d-flex align-items-center justify-content-between">
-                    <h5 class="text-capitalize mb-0">All Category</h5>
+                    <h5 class="text-capitalize mb-0">All Products</h5>
                     <div style="flex: 1 1 0%;">
                         <input @keydown="searchData" v-model="search" class="form-control w-100 ml-4 all_page_search" />
                     </div>
@@ -24,7 +24,9 @@
                                     <th class="w-10">ID</th>
                                     <th>Image</th>
                                     <th>Title</th>
-                                    <th> Is Hide </th>
+                                    <th>Dicount type</th>
+                                    <th>Dicount amount</th>
+                                    <th>Purcahse Price</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,16 +34,22 @@
                                     <!-- <td><input class="form-check-input ml-0" type="checkbox" /></td> -->
                                     <td>{{ item.id }}</td>
                                     <td>
-                                        <img class="bg-white" :src="load_image(item.image)" alt=""
+                                        <img class="bg-white" :src="load_image(item.product_image?.url)" alt=""
                                             style="height: 30px;" />
                                     </td>
                                     <td>
-                                        <div class="text-warning cursor-pointer">{{ item.title }}</div>
+                                        <div class="text-warning cursor-pointer">{{ item.title.substr(0, 20) }}</div>
                                     </td>
                                     <td>
-                                        <input @change="updateFeatured(item.slug)" class="form-check-input"
-                                            :checked="item.status == 'active' ? true : false" type="checkbox" />
+                                        <div class="text-warning cursor-pointer">{{ item.dicount_type ?? 'N/A' }}</div>
                                     </td>
+                                    <td>
+                                        <div class="text-warning cursor-pointer">{{ item.discount_amount ?? 'N/A' }}</div>
+                                    </td>
+                                    <td>
+                                        <div class="text-warning cursor-pointer">{{ item.product_purchase_price ?? 'N/A' }}</div>
+                                    </td>
+
                                 </tr>
                             </tbody>
                         </table>
@@ -114,7 +122,7 @@ export default {
     },
 
     methods: {
-        async get_all_products(pageUrl = 'product-categories') {
+        async get_all_products(pageUrl = 'products') {
             let response = await axios.get(pageUrl);
             if (response.data.status === 'success') {
                 this.products = response.data.data;
@@ -148,7 +156,7 @@ export default {
         },
 
         async updateFeatured(slug) {
-            let response = await axios.post(`product-categories/actions-update/${slug}?status=1`);
+            let response = await axios.post(`products/actions-update/${slug}?is_featured=1`);
             if (response.data.status === 'success') {
                 window.s_alert(response.data.message);
                 this.get_all_products();
@@ -158,7 +166,7 @@ export default {
         searchData: function () {
             clearTimeout(this.searchTimer);
             this.searchTimer = setTimeout(async () => {
-                this.get_all_products('product-categories?search=' + this.search);
+                this.get_all_products('products?search=' + this.search);
                 if (response.data.status === 'success') {
                     window.s_alert(response.data.message);
                     this.get_all_products();

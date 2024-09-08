@@ -1,10 +1,8 @@
 import Layout from "./partials/Layout.vue"
 import Dashboard from "./Dashboard.vue"
-
 //user management routes
 import user_routes from "./management/UserManagement/users/setup/routes";
 import user_supplier_routes from "./management/UserManagement/suppliers/setup/routes";
-
 import product_brand_routes from "./management/ProductManagement/Brand/setup/routes"
 import product_manufacture_routes from "./management/ProductManagement/Manufacture/setup/routes"
 import product_category_routes from "./management/ProductManagement/Category/setup/routes"
@@ -19,7 +17,6 @@ import product_units from "./management/ProductManagement/Unit/setup/routes"
 import product_tags from "./management/ProductManagement/ProductTag/setup/routes"
 import product_category_tags from "./management/ProductManagement/ProductCategoryTag/setup/routes"
 import BarcodeGenerator from "./management/ProductManagement/Barcode/BarcodeGenerator.vue"
-
 import configuration_routes from "./management/Configuration/setup/routes"
 import report_routes from "./management/Report/setup/routes"
 // eCommerce management
@@ -37,6 +34,7 @@ import promo_code_routes from "./management/Ecommerce/PromoCode/setup/routes"
 import product_faq_routes from "./management/Ecommerce/ProductFAQ/setup/routes"
 import general_seo_routes from "./management/Ecommerce/GeneralSeo/setup/routes"
 import offers_routes from "./management/Ecommerce/Offer/setup/routes"
+import ecommerce_order_routes from "./management/Ecommerce/SalesOrder/setup/routes"
 
 
 
@@ -70,10 +68,8 @@ const routes = {
         // blog_category_routes,
         // blog_routes,
         //user management routes
-
         user_routes,
         user_supplier_routes,
-
         // product management
         product_brand_routes,
         product_manufacture_routes,
@@ -88,7 +84,6 @@ const routes = {
         product_units,
         product_tags,
         product_category_tags,
-
         configuration_routes,
         report_routes,
         // eCommerce management
@@ -106,8 +101,7 @@ const routes = {
         product_faq_routes,
         general_seo_routes,
         offers_routes,
-
-
+        ecommerce_order_routes,
     ]
 };
 

@@ -151,13 +151,10 @@
             <side-bar-drop-down-menus :icon_image="`https://files.etek.com.bd/images/icon_ecommerce.png`"
                 :icon="`fa fa-plus`" :menu_title="`e-Commerce`" :menus="[
                     {
-                        route_name: `Allecommerce_orders`,
+                        route_name: `Allelectronics_sales_order`,
                         title: `Orders`,
                     },
-                    // {
-                    //     route_name: `Allwebsite_customers`,
-                    //     title: `Customers`,
-                    // },
+
                     {
                         route_name: `Allcustomer_wishlists`,
                         title: `Customer Wishlist`,
@@ -224,16 +221,20 @@
                         title: `Offers`,
                     },
                     {
+                        route_name: `OfferProduct`,
+                        title: `Discount Products`,
+                    },
+                    {
                         route_name: `FeatureProducts`,
                         title: `Featured Products`,
                     },
                     {
-                        route_name: `FeatureCategory`,
-                        title: `Featured Categories`,
-                    },
-                    {
                         route_name: `HideProducts`,
                         title: `Hide Products`,
+                    },
+                    {
+                        route_name: `FeatureCategory`,
+                        title: `Featured Categories`,
                     },
                     {
                         route_name: `HideCategory`,

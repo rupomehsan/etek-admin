@@ -18,9 +18,9 @@
                         <table class="table table-hover text-center table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="w-10 text-center">
+                                    <!-- <th class="w-10 text-center">
                                         <input class="form-check-input ml-0 select_all_checkbox" type="checkbox" />
-                                    </th>
+                                    </th> -->
                                     <th class="w-10">ID</th>
                                     <th>Image</th>
                                     <th>Title</th>
@@ -29,7 +29,7 @@
                             </thead>
                             <tbody>
                                 <tr v-for="item in products.data" :key="item.id" class="table_rows table_row_83106">
-                                    <td><input class="form-check-input ml-0" type="checkbox" /></td>
+                                    <!-- <td><input class="form-check-input ml-0" type="checkbox" /></td> -->
                                     <td>{{ item.id }}</td>
                                     <td>
                                         <img class="bg-white" :src="load_image(item.image)" alt=""
@@ -74,7 +74,7 @@
                         <div class="d-flex" style="gap: 5px;">
                             <span></span><span>Limit</span>
                             <select v-model="pagination.per_page" class="bg-transparent text-white rounded-1"
-                                @change="changePage(pagination.path + '?page=1')">
+                                @change="changePage(pagination.path + `?limit=${pagination.per_page}`)">
                                 <option value="5">5</option>
                                 <option value="10">10</option>
                                 <option value="15">15</option>

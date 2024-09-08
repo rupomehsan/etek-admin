@@ -7,6 +7,7 @@ import FeatureProducts from "./FeatureProduct.vue";
 import HideProducts from "./HideProduct.vue";
 import FeatureCategory from "./FeatureCategory.vue";
 import HideCategory from "./HideCategory.vue";
+import OfferProduct from "./OfferProduct.vue";
 import Layout from "./Layout.vue";
 
 
@@ -54,6 +55,11 @@ const routes =
             path: 'hide-category',
             name: "HideCategory",
             component: HideCategory,
+        },
+        {
+            path: 'discount-products',
+            name: "OfferProduct",
+            component: OfferProduct,
         },
 
 
